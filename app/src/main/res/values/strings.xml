@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">新化通</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+    <string name="back">返回</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="exit">退出</string>
+    <string name="next">下一步</string>
+    <string name="submit">提交</string>
+    <string name="exit_confirm_msg">退出新化通客户端吗？</string>
+    <string name="click_to_load_more">点击加载更多</string>
+    <string name="loading">正在加载…</string>
+    <string name="pic_loading">图片加载中…</string>
+    <string name="searching">正在查询…</string>
+    <string name="net_error">网络错误</string>
+    <string name="net_not_available">网络不可用</string>
+    <string name="net_error_reload">网络错误，点击重新加载！</string>
+    <string name="no_data_to_refresh">无数据，刷新试试！</string>
+    <string name="lick_to_view_detail">点击查看详情</string>
+    <string name="push_notice_title">通知</string>
+    <string name="no_data">无数据！</string>
+    <string name="share">分享</string>
+    <string name="share_chooser">分享通过</string>
+    <string name="error">错误</string>
+    <string name="network_not_available">网络不可用，请检查网络设置！</string>
+    <string name="notice_title">提示</string>
+    <string name="notice_content">欢迎使用新化通手机客户端。新化通手机客户端使用完全免费，在使用过程中，会通过GPS、基站或WLAN获取您的地理位置信息，读取联系人信息，使用过程中会使用WLAN，会产生流量费，流量费用请咨询当地运营商。</string>
+    <string name="refuse">拒绝</string>
+    <string name="start_version">新化通Android</string>
+    <string name="common_waiting">请稍候...</string>
+    <string name="save">保存</string>
+    <string name="retry">重新加载</string>
+    <string name="common_del">删除</string>
+
+    <!--主页-->
+    <string name="main_home">首页</string>
+    <string name="main_official">球队</string>
+    <string name="main_ticket">购票</string>
+    <string name="main_user_center">个人中心</string>
+
+    <!-- 登录 注册 认证相关-->
+    <string name="login">登录</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_fail">登录失败</string>
+
+    <string name="update_psw">修改密码</string>
+    <string name="forget_psw">找回密码</string>
+    <string name="old_psw">原密码</string>
+    <string name="new_psw">新密码</string>
+    <string name="sure_psw">确认密码</string>
+    <string name="update_psw_fail">修改密码失败</string>
+
+    <string name="input_verify">请输入验证码</string>
+    <string name="verify_send_success">验证码已发送</string>
+    <string name="verify_send_fail">短信下发失败</string>
+    <string name="fast_reg">快速注册</string>
+    <string name="input_phone_hint">请输入手机号码（会员卡号）</string>
+    <string name="input_ems_verify">请输入短信验证码</string>
+    <string name="input_old_password_hint">请输入源密码</string>
+    <string name="input_new_password_hint">请输入新密码</string>
+    <string name="input_new_password_ok_hint">请确认新密码</string>
+    <string name="password_id_empty">密码不能为空</string>
+    <string name="ems_verify_fail">短信验证码错误，请重试</string>
+    <string name="password_verify_fail">两次密码输入不一致，请重试</string>
+    <string name="input_true_mobile">请输入正确的手机号码</string>
+    <string name="find_psw_fail">密码找回失败</string>
+
+    <!-- 公告 -->
+    <string name="new_bulletin">最新公告</string>
+
+    <!-- 版本更新 -->
+    <string name="upgrade_checking">正在检查更新，请稍候...</string>
+    <string name="upgrade">升级</string>
+    <string name="upgrade_is_lastest">您的版本已是最新版本！</string>
+    <string name="upgrade_find_new">发现有新版本，立即升级？</string>
+    <string name="upgrade_start_download">开始下载...</string>
+    <string name="upgrade_download_fail">下载失败</string>
+    <string name="upgrade_click_package">点击安装</string>
+    <string name="upgrade_downloading">下载中...  </string>
+    <string name="account_setting_upgrade">检查更新</string>
+    <string name="account_setting_about_us">关于我们</string>
+    <string name="account_setting_find_new_version">发现新版本</string>
+    <string name="common_app_power">Powered by 21CN.COM</string>
+
+    <!-- 设置相关 -->
+    <string name="setting">设置</string>
+    <string name="setting_accept_push">接收推送通知</string>
+    <string name="setting_update">版本更新</string>
+    <string name="setting_about_us">关于我们</string>
+    <string name="setting_logout">退出登录</string>
+    <string name="main_bus_come">班车来了</string>
+</resources>

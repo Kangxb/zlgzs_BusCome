@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F9F9F9</color>
+    <color name="colorPrimaryDark">#F1F1F1</color>
+    <color name="colorAccent">#D8D8D8</color>
+
+    <!-- 公用颜色 -->
+    <color name="common_red">#FF0000</color>
+    <color name="common_white">#FFFFFF</color>
+    <color name="common_red_press">#D40A0A</color>
+    <color name="common_title">#202020</color>
+    <color name="common_divider">#dadada</color>
+
+    <color name="start_background">#BA0000</color>
+    <color name="start_version">#F4D900</color>
+
+    <!-- 设置-->
+    <color name="setting_text">#6C6C6C</color>
+    <color name="setting_btn_bg">#F8F8F8</color>
+    <color name="setting_btn_bg_pressed">#DEDEDE</color>
+</resources>
