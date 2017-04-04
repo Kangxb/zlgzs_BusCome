@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.zlgzs.xinhuatong.buscome.fragment.NewsFragment;
+import com.zlgzs.xinhuatong.buscome.fragment.HomePageFragment;
 import com.zlgzs.xinhuatong.buscome.widget.MainBottomView;
 
 /**
@@ -26,13 +26,13 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position == MainBottomView.OFFICIAL){
-            return new NewsFragment();
+            return new HomePageFragment();
         }else if(position == MainBottomView.TICKET){
-            return new NewsFragment();
+            return new HomePageFragment();
         }else if(position == MainBottomView.HOME){
-            return new NewsFragment();
+            return new HomePageFragment();
         }else {
-            return new NewsFragment();
+            return new HomePageFragment();
         }
     }
 

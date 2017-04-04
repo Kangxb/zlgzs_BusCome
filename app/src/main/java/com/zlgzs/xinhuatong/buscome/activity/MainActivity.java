@@ -85,7 +85,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,
     private void setHeaderState(int curPosition){
         switch (curPosition){
             case MainBottomView.HOME:
-                mHeader.setCenterTitleTxt(getString(R.string.main_home));
+                mHeader.setCenterTitleTxt(getString(R.string.main_home_page));
                 mHeader.setLeftIvVisibility(View.GONE);
                 mHeader.setRightIvVisibility(View.GONE);
                 mHeader.setRightTxtVisibility(View.GONE);
@@ -113,6 +113,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,
         }
     }
 
+    private void setBottomState(int curPosition){
+        mMainBottomView.setCurPosition(curPosition);
+    }
+
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -120,7 +124,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void onPageSelected(int position) {
-
+        setHeaderState(position);
+        setBottomState(position);
     }
 
     @Override
@@ -135,6 +140,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,
 
     @Override
     public void onClick(int prePosition, int curPosition) {
-
+        mContentViewPager.setCurrentItem(curPosition);
     }
 }

@@ -8,11 +8,9 @@ package com.zlgzs.xinhuatong.buscome.manager;
  * @date 2017/4/3
  * @modfiy
  */
-public class BaseManager {
+public abstract class BaseManager {
     /**
      * 用于退出页面时间取消后台线程
      */
-    public void cancel(){
-
-    }
+    public abstract void cancel();
 }
