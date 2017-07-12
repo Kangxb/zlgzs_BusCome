@@ -45,6 +45,7 @@ public class HomePageAdapter extends BaseRecyclerViewAdapter{
     public void setBusPathInfoList(ArrayList<BusPathInfoEntity> busPathInfoEntity) {
         this.busPathInfoEntities = busPathInfoEntity;
         notifyDataSetChanged();
+
     }
 
     /**
