@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class BusPathInfoEntity extends BaseItemEntity  implements Serializable, Parcelable {
     private static final long serialVersionUID = 7322142431698829296L;
 
-    public Long inStationTime;        // 到站时间
+    public String inStationTime;      // 到站时间
     public String inceptionStation;   // 起点站
     public String terminalStation;    // 终点站
     public String busNumber;          // 车次
@@ -27,7 +27,7 @@ public class BusPathInfoEntity extends BaseItemEntity  implements Serializable, 
     public String outHomeTime;        // 出门时间
 
     public BusPathInfoEntity(Parcel in) {
-       this.inStationTime = in.readLong();
+       this.inStationTime = in.readString();
        this.inceptionStation = in.readString();
        this.terminalStation = in.readString();
        this.busNumber = in.readString();
@@ -39,7 +39,7 @@ public class BusPathInfoEntity extends BaseItemEntity  implements Serializable, 
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(inStationTime);
+        dest.writeString(inStationTime);
         dest.writeString(inceptionStation);
         dest.writeString(terminalStation);
         dest.writeString(busNumber);
@@ -47,6 +47,11 @@ public class BusPathInfoEntity extends BaseItemEntity  implements Serializable, 
         dest.writeInt(distance);
         dest.writeString(walkTime);
         dest.writeString(outHomeTime);
+    }
+
+    @Override
+    public int getItemViewType() {
+        return TYPE_DEFAULT;
     }
 
     @Override

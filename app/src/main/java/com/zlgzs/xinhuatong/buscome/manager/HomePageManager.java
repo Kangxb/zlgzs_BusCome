@@ -1,6 +1,13 @@
 package com.zlgzs.xinhuatong.buscome.manager;
 
 import android.content.Context;
+import android.text.TextUtils;
+
+import com.zlgzs.xinhuatong.buscome.model.BusPathInfoEntity;
+import com.zlgzs.xinhuatong.buscome.model.BusPathListInfoEntity;
+import com.zlgzs.xinhuatong.buscome.utils.JsonUtil;
+
+import java.util.ArrayList;
 
 /**
  * 类说明：
@@ -39,7 +46,25 @@ public class HomePageManager extends BaseManager{
         getHomePageListFromNet(true);
     }
 
-    public void getHomePageListFromNet(final boolean isRefresh){
+    public void getHomePageListFromNet(final boolean isRefresh) {
+        //FIXME 暂时写假数据
+        BusPathListInfoEntity busPathListInfoEntity = new BusPathListInfoEntity();
+        String jsonData = "{\"busPathInfos\":[" +
+                "{\"inStationTime\":\"08:30\",\"inceptionStation\":\"新化\",\"terminalStation\":\"田坪\",\"busNumber\":\"湘K1080\",\"nearestStation\":\"关上\",\"distance\":980,\"walkTime\":\"15分钟\",\"outHomeTime\":\"08:20\" }," +
+                "{\"inStationTime\":\"09:00\",\"inceptionStation\":\"新化\",\"terminalStation\":\"田坪\",\"busNumber\":\"湘K1089\",\"nearestStation\":\"关上\",\"distance\":980,\"walkTime\":\"15分钟\",\"outHomeTime\":\"08:50\" }," +
+                "{\"inStationTime\":\"09:30\",\"inceptionStation\":\"新化\",\"terminalStation\":\"田坪\",\"busNumber\":\"湘K1022\",\"nearestStation\":\"关上\",\"distance\":980,\"walkTime\":\"15分钟\",\"outHomeTime\":\"09:20\" }," +
+                "{\"inStationTime\":\"10:00\",\"inceptionStation\":\"新化\",\"terminalStation\":\"田坪\",\"busNumber\":\"湘K1032\",\"nearestStation\":\"关上\",\"distance\":980,\"walkTime\":\"15分钟\",\"outHomeTime\":\"10:50\" }," +
+                "{\"inStationTime\":\"10:30\",\"inceptionStation\":\"新化\",\"terminalStation\":\"田坪\",\"busNumber\":\"湘K10w3\",\"nearestStation\":\"关上\",\"distance\":980,\"walkTime\":\"15分钟\",\"outHomeTime\":\"11:20\" }," +
+                "{\"inStationTime\":\"11:00\",\"inceptionStation\":\"新化\",\"terminalStation\":\"田坪\",\"busNumber\":\"湘K1349\",\"nearestStation\":\"关上\",\"distance\":980,\"walkTime\":\"15分钟\",\"outHomeTime\":\"11:50\" }," +
+                "{\"inStationTime\":\"11:30\",\"inceptionStation\":\"新化\",\"terminalStation\":\"田坪\",\"busNumber\":\"湘K1054\",\"nearestStation\":\"关上\",\"distance\":980,\"walkTime\":\"15分钟\",\"outHomeTime\":\"12:20\" }," +
+                "{\"inStationTime\":\"12:00\",\"inceptionStation\":\"新化\",\"terminalStation\":\"田坪\",\"busNumber\":\"湘K1036\",\"nearestStation\":\"关上\",\"distance\":980,\"walkTime\":\"15分钟\",\"outHomeTime\":\"01:50\" }"  +
+                "]}";
+        if(!TextUtils.isEmpty(jsonData)){
+            busPathListInfoEntity = JsonUtil.fromJsonString(jsonData,BusPathListInfoEntity.class);
+        }
+        if(busPathListInfoEntity != null){
+            mIHomePageManager.onLoadingSuccess(busPathListInfoEntity, 1, false);
+        }
 
     }
 

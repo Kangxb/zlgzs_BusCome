@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,14 @@ import com.zlgzs.xinhuatong.buscome.adapter.HomePageAdapter;
 import com.zlgzs.xinhuatong.buscome.manager.HomePageManager;
 import com.zlgzs.xinhuatong.buscome.manager.IHomePageManager;
 import com.zlgzs.xinhuatong.buscome.model.BaseEntity;
+import com.zlgzs.xinhuatong.buscome.model.BusPathInfoEntity;
+import com.zlgzs.xinhuatong.buscome.model.BusPathListInfoEntity;
 import com.zlgzs.xinhuatong.buscome.utils.ToastUtil;
 import com.zlgzs.xinhuatong.buscome.widget.decoration.CommonSimpleDivider;
+
+import java.util.ArrayList;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * 类说明：
@@ -25,7 +32,7 @@ import com.zlgzs.xinhuatong.buscome.widget.decoration.CommonSimpleDivider;
  * @author kangxb
  * @version 1.0
  * @date 2017/4/3
- * @modfiy0
+ * @modfiy
  */
 public class HomePageFragment extends BaseRecyclerViewFragment implements IHomePageManager{
     private Activity mActivity;
@@ -42,15 +49,16 @@ public class HomePageFragment extends BaseRecyclerViewFragment implements IHomeP
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mHomePageManager.getHomePageList();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mActivity = getActivity();
-        mHomePageManager = new HomePageManager(mActivity,this);
-        mRootView = inflater.inflate(R.layout.fragment_home_page,container,false);
+        mHomePageManager = new HomePageManager(mActivity, this);
+        mRootView = inflater.inflate(R.layout.fragment_home_page, container, false);
         mSwipeRefreshLayout = (SwipeRefreshLayout) mRootView.findViewById(R.id.home_page_srl);
         initAdapter();
         initRecyclerView();
@@ -62,6 +70,15 @@ public class HomePageFragment extends BaseRecyclerViewFragment implements IHomeP
 
     private void initAdapter() {
         adapter = new HomePageAdapter(mActivity);
+
+        adapter.setAdList( /* 实体数据  */new HomePageAdapter.OnAdClickListener() {
+
+            @Override
+            public void onClickAd() {
+                //TODO 跳转到广告店内信息
+                ToastUtil.showLongToast(mActivity, "跳到广告店家信息");
+            }
+        });
         adapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener(){
 
             @Override
@@ -71,14 +88,6 @@ public class HomePageFragment extends BaseRecyclerViewFragment implements IHomeP
             }
         });
 
-        adapter.setAdCoumnClickListener(new HomePageAdapter.OnAdCoumnClickListener() {
-
-             @Override
-             public void onClickAd() {
-                 //TODO 跳转到广告店内信息
-                 ToastUtil.showLongToast(mActivity, "跳到广告店家信息");
-             }
-        });
     }
 
     private void initRecyclerView(){
@@ -94,9 +103,9 @@ public class HomePageFragment extends BaseRecyclerViewFragment implements IHomeP
 
     @Override
     protected void loadMore() {
-        if(mIsLoadingNewsList){
+//        if(mIsLoadingNewsList){
             mHomePageManager.getHomePageListFromNet();
-        }
+//        }
     }
 
     @Override
@@ -127,6 +136,10 @@ public class HomePageFragment extends BaseRecyclerViewFragment implements IHomeP
     @Override
     public void onLoadingSuccess(BaseEntity baseEntity, int pageNum, boolean isRefresh) {
         mIsLoadingNewsList = false;
+        ArrayList<BusPathInfoEntity> busPathInfoEntity = ((BusPathListInfoEntity)baseEntity).busPathInfos;
+        Log.i(TAG, "--busPathInfoEntity-->" + busPathInfoEntity.get(0).busNumber);
+        adapter.setBusPathInfoList(busPathInfoEntity);
+
 //        if(!ResponseUtil.isEmptyList(entity.Rows)){
 //            handleNewsList(pageNum,entity.Rows,isRefresh);
 //        }else {

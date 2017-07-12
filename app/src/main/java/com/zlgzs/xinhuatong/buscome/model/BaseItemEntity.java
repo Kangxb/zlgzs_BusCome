@@ -19,6 +19,15 @@ public  class BaseItemEntity extends BaseEntity implements Serializable, Parcela
     public static final int TYPE_HEADER = 1;//头部View
     public static final int TYPE_FOOTER = 2; //底部加载更多Item
 
+    //定义五种通用类型
+    public static final int TYPE_TIME1 = 0x16; //通用类型1
+    public static final int TYPE_TIME2 = 0x17; //通用类型2
+    public static final int TYPE_TIME3 = 0x18; //通用类型3
+    public static final int TYPE_TIME4 = 0x19; //通用类型4
+    public static final int TYPE_TIME5 = 0x20; //通用类型5
+    public static final int TYPE_TIME6 = 0x21; //通用类型6
+
+
     public int getItemViewType(){
         return TYPE_DEFAULT;
     }

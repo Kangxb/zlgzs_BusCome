@@ -3,6 +3,7 @@ package com.zlgzs.xinhuatong.buscome.adapter;
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -125,6 +126,7 @@ public abstract class BaseRecyclerViewAdapter<T extends BaseItemEntity> extends 
 
     public void setHeaderViewHolder(RecyclerView.ViewHolder headerViewHolder) {
         this.headerViewHolder = headerViewHolder;
+        setHeaderViewVisible(true);
     }
 
     public void setHeaderViewVisible(boolean isVisible) {
